@@ -4,7 +4,11 @@ It will be nice to use the app to crop the image to my taste! Right?
 
   Apart from the editting part, for better image experience, we might need images of a particular width and height ratio (📝 we call this **aspect ratio**) in our apps. 
 In this article, we are going to implement a simple image cropping system in a React Application we will create. Great! Let's get started! 🚀.
-  
+ 
+# Prerequisites
+  Yeah! Knowledge of Javascript and React is required but if your are a beginner or intermediate with React and Javascript,
+why not join the train 🚆.
+
 # Project Structure
   Let's create our React projects with our command line.
 ```bash
@@ -22,9 +26,12 @@ We will also use a react image cropping component, **ReactCrop**. You could chec
 ```bash
 npm install ReactCrop
 ```
-So this is how my package.json is
-```
+Take a peek at my package.json
+```json
 {
-  name: reactimagecrop
+  "name": "reactimagecrop",
+  "script": {
+    "start": "react-scripts run"
+  }
 }
 ```
