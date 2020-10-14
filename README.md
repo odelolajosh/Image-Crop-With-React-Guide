@@ -1,14 +1,14 @@
-# Let Get Started
+# 1. Let's Get Started
   As a user of your mobile or web app, I want to personalize my experience by including profile picture 😎 but the picture I want to use is too large and does not focus the part I wanted or I want to remove some part of the image. 
 It will be nice to use the app to crop the image to my taste! Right?
 
   Apart from the editting part, for better image experience, we might need images of a particular width and height ratio (📝 we call this **aspect ratio**) in our apps. 
 In this article, we are going to implement a simple image cropping system in a React Application we will create. Check out the result demo [here](https://Joshua0707.github.io/Image-Crop-In-React) . Great! Let's get started! 🚀.
  
-# Prerequisites
+# 2. Prerequisites
   Yeah! Knowledge of Javascript, CSS and React is required but if your are a beginner or intermediate with React and Javascript, why not join the train 🚆.
 
-# Project Structure
+# 3. Project Structure
   Let's create our React projects with our command line.
 ```bash
 npm init react-app reactimagecrop
@@ -24,7 +24,7 @@ After our **reactimagecrop** project is loaded, we are left with a nice structur
   * index.css
   * serviceWorker.js
 
-We will also use a react image cropping component, **ReactCrop**. You could check out it's documentation here.
+We will also use a react image cropping component, **ReactCrop**. You could check out it's documentation [here](https://www.npmjs.com/package/react-image-crop).
 ```bash
 npm install ReactCrop
 ```
@@ -48,17 +48,17 @@ Take a peek at my package.json
 ```
 
 This tutorial will be segmented based on these tasks or should we call it todo?
-* Creating and Styling the Upload Page
-* Creating the Crop Modal Component
-* Using the Crop Modal Component
-* Making Image Preview from Upload Inputs
-* Using the ReactImageCrop component
-* Adding Custom Styles to ReactImageCrop
-* Creating the Result Container
-* Cropping the Image with Canvas
-* Validating Upload Inputs
+- Creating and Styling the Upload Page
+- Creating the Crop Modal Component
+- Using the Crop Modal Component
+- Making Image Preview from Upload Inputs
+- Using the ReactImageCrop component
+- Adding Custom Styles to ReactImageCrop
+- Creating the Result Container
+- Cropping the Image with Canvas
+- Validating Upload Inputs
 
-# Creating and Styling the Upload Page
+# 4. Creating and Styling the Upload Page
 We are creating this page in our `app.js` file. We have the react template code here, we don't need some elements and so we remove them. We are left with this.
 ```jsx
 import React from 'react';
@@ -111,9 +111,11 @@ I included a svg import from my project file. If you need this file check it in 
 }
 ```
 
-You can style it to your taste 👌. 
-
-# Creating the Crop Modal Component
+You can style it to your taste 👌. This is what I got.
+<br><br>
+<img src="./image/upload-comp.png" />
+<br><br>
+# 5. Creating the Crop Modal Component
 We are making the crop component a modal. In the `components` folder, I have the `ImageCropModal.js` file. That's the crop modal component. For simplicity, we are making use of *React's class component*.
 ```jsx
 class ImageCropModal extends React.Component {
@@ -201,7 +203,7 @@ Now, let's work on the styling for the modal component.
 
 You could do some other works on the styling regarding the toolbar's button colors and other criteria.
 
-# Using the Upload Modal Component
+# 6. Using the Upload Modal Component
 In the last section, we just created the Crop Modal Component. Time ⌛ to implement it. We want the crop modal to come up when we have selected an image. Let's use this logic. We have a `image-input` state variable initialized to `null`. When `image-input` is `null`, the modal is not rendered else the modal is rendered. In `App.js`, we could do this
 ```jsx
 // ...
@@ -248,7 +250,7 @@ function App() {
 }
 ```
 
-# Making Image Preview from Upload Inputs
+# 7. Making Image Preview from Upload Inputs
 Until now, we just have the modal coming up when a file is selected and nothing else happens. Have you wondered how are files selected by input are displayed? especially without having uploaded it? Have you tried this before? Let me introduce you to what is called `base64`. `base64` is a binary-to-text encoding scheme. Read more on [here]("kds"). It can be included in a *data URL*. That's what we need to preview the selected image.
 
 We should be able to pass the selected file to the `ImageCropModal` component as props. Just after render, we should be able to display the preview.
@@ -288,8 +290,8 @@ class ImageCropModal extends React.Component {
 
 This is not what we are developing but what I'm driving at is how to preview images from files. This is what the ReactImageCrop components needs to display the images selected.
 
-# Using the ReactImageCrop component
-Great Work! 💪 This is exactly have of our tasks. Instead of the `img` tag for preview, we want the `ReactImageCrop` component for cropping 🥂. 
+# 8. Using the ReactImageCrop component
+Great Work! 💪 This is exactly half of our tasks. Instead of the `img` tag for preview, we want the `ReactImageCrop` component for cropping 🥂. 
 ```jsx
 // ...
 import ReactImageCrop from 'react-image-crop';
@@ -310,4 +312,5 @@ class ImageCropModal extends React.Component {
 }
 ```
 
-`ReactImageCrop` takes more than `src`. Check its documentation [here](link).  
+`ReactImageCrop` takes more than `src`. Check its documentation [here](https://www.npmjs.com/package/react-image-crop). It accepts the following props
+- one
