@@ -32,7 +32,7 @@ Take a peek at my package.json
 ```json
 {
   "name": "image-cropping-in-react"
-  ...
+  // ...
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
@@ -43,7 +43,7 @@ Take a peek at my package.json
     "react-image-crop": "^8.6.6",
     "react-scripts": "3.4.3"
   },
-  ...
+  // ...
 }
 ```
 
