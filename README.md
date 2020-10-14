@@ -31,7 +31,7 @@ npm install ReactCrop
 Take a peek at my package.json
 ```json
 {
-  "name": "image-cropping-in-react"
+  "name": "image-cropping-in-react",
   
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
