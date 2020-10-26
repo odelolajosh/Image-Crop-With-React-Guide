@@ -2,12 +2,12 @@
   As a user of your mobile or web app, I want to personalize my experience by including profile picture 😎 but the picture I want to use is too large and does not focus the part I wanted or I want to remove some part of the image. 
 It will be nice to use the same app to crop the image to my taste! Right?
 
-  Apart from the editting part, for better image experience, we might need images of a particular width and height ratio (📝 we call this **aspect ratio**) in our apps. 
-In this article, we are going to implement a simple image cropping system in a React Application we will create. Check out the result demo [here](https://Joshua0707.github.io/Image-Crop-In-React) . Great! Let's get started! 🚀.
+Apart from the editting part, we might need images of a particular width and height ratio (📝 we call this **aspect ratio**) in our apps for better image experience. 
+In this article, we are going to create a simple image cropping system in React. Check out the result demo [here](https://Joshua0707.github.io/Image-Crop-In-React) . Great! Let's get started! 🚀.
  <br><br>
 
 # 2. Prerequisites
-  Yeah! Knowledge of Javascript, CSS and React is required but if your are a beginner or intermediate with React and Javascript, why not join the train 🚆.
+  Yeah! Knowledge of Javascript, CSS and React is required. But if you are a beginner or intermediate with React and Javascript, why not join the train 🚆.
 
  <br><br>
 
@@ -16,7 +16,7 @@ In this article, we are going to implement a simple image cropping system in a R
 ```bash
 npm init react-app reactimagecrop
 ```
-After our **reactimagecrop** project is loaded, we are left with a nice structure. We won't need some files like `logo.svg` and the test files. I included `components` folder (which will hold the components we will use), `helper` folder for utilities files.  So, I am left
+After our `reactimagecrop` project is loaded, we are left with a nice structure. We won't need some files like `logo.svg` and the test files. I included `components` folder (which will hold the components we will use), `helper` folder for utilities files.  So, I am left with
 * public
 * src
   * components
@@ -27,7 +27,7 @@ After our **reactimagecrop** project is loaded, we are left with a nice structur
   * index.css
   * serviceWorker.js
 
-We will also use a react image cropping component, **ReactCrop**. You could check out it's documentation [here](https://www.npmjs.com/package/react-image-crop).
+We will also use a react image cropping component, `ReactCrop`. You could check out it's documentation [here](https://www.npmjs.com/package/react-image-crop).
 ```bash
 npm install ReactCrop
 ```
@@ -50,7 +50,7 @@ Take a peek at my package.json
 }
 ```
 
-This tutorial will be segmented based on these tasks or should we call it todo?
+This tutorial will in segments based on these tasks or should we call it todo?
 - Creating and Styling the Upload Page
 - Creating the Crop Modal Component
 - Using the Crop Modal Component
@@ -94,7 +94,7 @@ return (
 ...
 ```
 
-I included a svg import from my project file. If you need this file check it in [here](https://Joshua0707.github.io/Image-Crop-In-React). Now we style, in `app.css`. This is the trick! Since we're making our custom input file upload element, we use positioning to make the `input` fill the box and we reduce its opacity to 0. Then, the `input` is there but we can't see it.
+I included a svg import from my project file. If you need this file check it in [here](https://github.com/Joshua0707/Image-Crop-In-React/blob/main/src/icon.js). Now we style in `app.css`. This is the trick! Since we're making our custom input file upload element, we use positioning to make the `input` fill the box and we reduce its opacity to 0. Then, the `input` is there but we can't see it.
 ```css
 .App .upload-bx {
   width: 400px;
@@ -236,7 +236,7 @@ function App() {
 }
 ```
 
-Let's update this to be the selected file via our upload component. I created a `handleInput` function to do just that. The `onInput` event triggered as a selection is made in the input file gives an *event* parameter. It comprises of all information about the event occurred. Part of that information is the `target`, which is the element (, in this case the `input[type="file"]` element) the event occurred on. We could get the value of the input but for file type, we get the files selected by get its `files` attribute. We are in this tutorial selecting just one, the first one.
+Let's update this to be the selected file via our upload component. I created a `handleInput` function to do just that. The `onInput` event triggered as a selection is made in the input file gives an *event* parameter. It comprises of all information about the event occurred. The information will include the `target`, which is the element, (in this case the `input[type="file"]` element) the event occurred on. We could get the value of the input but for file type, we get the files selected by get its `files` attribute. We are in this tutorial selecting just one, the first one.
 ```jsx
 // ...
 function App() {
@@ -263,7 +263,7 @@ function App() {
  <br><br>
 
 # 7. Making Image Preview from Upload Inputs
-Until now, we just have the modal coming up when a file is selected and nothing else happens. Have you wondered how are files selected by input are displayed? especially without having uploaded it? Have you tried this before? Let me introduce you to what is called `base64`. `base64` is a binary-to-text encoding scheme. Read more on [here]("kds"). It can be included in a *data URL*. That's what we need to preview the selected image.
+Until now, we just have the modal coming up when a file is selected and nothing else happens. Have you wondered how are files selected by input are displayed? especially without having uploaded it? Have you tried this before? Let me introduce you to what is called `base64`. `base64` is a binary-to-text encoding scheme. Read more on [here](https://attacomsian.com/blog/javascript-base64-encode-decode). It can be included in a *data URL*. That's what we need to preview the selected image.
 
 We should be able to pass the selected file to the `ImageCropModal` component as props. Just after render, we should be able to display the preview.
 ```jsx
@@ -307,7 +307,7 @@ class ImageCropModal extends React.Component {
 
 Of course, you need to still the image to support images of various dimensions.
 <br>
-This is not what we are developing but what I'm driving at is how to preview images from files. This is what the ReactImageCrop components needs to display the images selected.
+This is not what we are developing but what I'm driving at is how to preview images from files. This is what the `ReactImageCrop` components needs to display the images selected.
 
 <br><br>
 
@@ -335,7 +335,7 @@ class ImageCropModal extends React.Component {
 ```
 
 `ReactImageCrop` takes more than `src`. Check its documentation [here](https://www.npmjs.com/package/react-image-crop). It accepts many *props*. We will use few of them.
-- crop is very much required. It serves as a template for how the cropping should take place. It states the initial crop (x, y, width, height), unit for cropping (default is 'px', it can also be '%') or aspect ratio (the rule for image cropping width-height ratio).
+- `crop` is very much required. It defined the cropping dimension on the image. It states the initial crop (x, y, width, height), unit for cropping (default is 'px', it can also be '%') or aspect ratio (the rule for image cropping width-height ratio).
   ```js
   crop: {
     unit: 'px', // default, can be 'px' or '%'
@@ -352,13 +352,13 @@ class ImageCropModal extends React.Component {
     unit: '%'
   }
   ```
-- onChange(crop, percentageCrop) is a required props. It happens for every change of the crop
-- onComplete(crop, percentageCrop) happens for every crop completed. It is optional.
-- onImageLoaded(image) is the callback which happens when the image is loaded. It passes the image DOM element as parameter. We are to return false if we are setting crop in this callback;
-- onImageError(error) is the callback which fires whens an error occurs during loading.
+- `onChange(crop, percentageCrop)` is a required props. It happens for every change of the crop
+- `onComplete(crop, percentageCrop)` happens for every crop completed. It is optional.
+- `onImageLoaded(image)` is the callback which happens when the image is loaded. It passes the image DOM element as parameter. We are to return false if we are setting crop in this callback;
+- `onImageError(error)` is the callback which fires whens an error occurs during loading.
 
 <br>
-The first thing we will do is to create the handlers for the ReactImageCrop props. The crop will be set in the state.
+The first thing we will do is to create the handlers for the `ReactImageCrop` props. The crop will be set in the state.
 
 ```jsx
 class ImageCropModal extends React.Component {
@@ -388,7 +388,7 @@ handleOnImageLoaded = (image) => {
           y: 10
       }
   });
-  return false;
+  return false; // as we are setting props
 }
 ```
 
@@ -402,17 +402,15 @@ handleOnImageError = (error) => {
 
 After, the image is loaded, we can now have the cropping system ready and handle crop change and completion.
 ```jsx
-handleOnCropChange = (crop) => {
-  this.setState({ crop: crop })
+handleOnCropChange = (pixelCrop, percentCrop) => {
+  this.setState({ crop: pixelCrop })
 }
 
-handleOnCropComplete = (crop, pixelCrop) => {
-  // console.log(crop, pixelCrop);
-  this.setState({ crop: crop })
+handleOnCropComplete = (pixelCrop, percentCrop) => {
+  this.setState({ crop: pixelCrop })
 }
 ```
-
-Let's attach these handlers to their appropriate `ReactImageCrop` props.
+For this tutorial, we are using the pixel crop value and not the percent crop value. Let's attach these handlers to their appropriate `ReactImageCrop` props.
 ```jsx
 <ReactImageCrop 
   src={this.state.imgSrc} 
@@ -426,15 +424,15 @@ Let's attach these handlers to their appropriate `ReactImageCrop` props.
 
 # 9. Adding Custom Styles to ReactImageCrop
 There are suppose two ways of creating custom styles.
-1. Copying the `react-image-crop/dist/ReactCrop.css` file to another custom css file and changing the styles. You will link this file instead of the default `react-image-crop/dist/ReactCrop.css`.
-2. Knowing the classes and extendsing the styles in your css file.
+1. Duplicating the `react-image-crop/dist/ReactCrop.css` file into another custom css file and changing the styles. You will link this file instead of the default `react-image-crop/dist/ReactCrop.css`.
+2. Knowing the classes and extending the styles in your css file.
 
-I prefer the second on as I won't like to distort any other thing except the element I want to style. This is the order of the element nest in the `ReactCropImage` component.
+I prefer the second one as I won't like to alter any other thing except the element I want to style. This is the order of the elements nested in the `ReactCropImage` component.
 <br><br>
 <img src="./image/react-crop-stack.png">
 <br><br>
 
-Directly from my `imagecropmodal.css` file, I can style the `ReactImageCrop` !.
+Directly from my `imagecropmodal.css` file, I can style the `ReactImageCrop` !
 ```css
 .image-crop-bx .modal-crop-bx .ReactCrop {
   /* your style */
@@ -442,6 +440,8 @@ Directly from my `imagecropmodal.css` file, I can style the `ReactImageCrop` !.
 .image-crop-bx .modal-crop-bx .ReactCrop .ReactCrop__image {
   /* Your style */
 }
+.image-crop-bx .modal-crop-bx .ReactCrop .ReactCrop__crop-selection {
+  /* Your style */
 }
 ```
 
@@ -462,7 +462,7 @@ From the [demo](https://Joshua0707.github.io/Image-Crop-In-React), the result co
 <br><br>
 Let's optimize the code in `App.js` to include the result container;
 ```jsx
-const App = () => {
+function App () {
   // ...
   const canvasRef = React.useRef(null);
   const [ showCanvas, setShowCanvas ] = React.useState(false);
@@ -486,7 +486,7 @@ const App = () => {
   return (
     <div className="App">
     {
-      !showCanvas ? (imageInput ? ImageCropModalBox : uploadBox) : <></>
+      !showCanvas ? (imageInput ? ImageCropModalBox : uploadBox) : ''
     } 
     <div className={`result-bx ${showCanvas ? 'show' : ''}`}>
       <div><canvas ref={canvasRef}></canvas></div>
@@ -504,7 +504,7 @@ const App = () => {
 }
 ```
 
-Nothing really hard up there. I created `showCanvas` state to define when the result container should be shown. I am using css's display `none` and `flex` to toggle visibility because I actually want the canvas to be rendered for use in the `ImageCropModal` compnent. For better readability, I made the uploadBox and the Modal variables. The `ImageCropModal` components takes the `imageSrc`, `canvasRef` dom element for displaying result, `onExit` handler and `onCropResult` callback. Let implements the props.
+Nothing really hard up there. I created `showCanvas` state to define when the result container should be shown. I am using css's display `none` and `flex` to toggle visibility because I actually want the canvas to be rendered for use in the `ImageCropModal` component. For better readability, I made the `uploadBox` and the `ImageCropModalBox` variables to hold the upload container and the modal container respectively. The `ImageCropModal` components takes the `imageSrc`, `canvasRef` DOM element for displaying result, `onExit` handler and `onCropResult` callback. Let implements the props.
 
 We already have the imageSrc and the canvasRef from the result container. the `onExit` handles the mechanism to exit the modal. Remember that the modal comes up when the `imageInput` state is not null. To close the modal, we have to set it to null.
 ```jsx
@@ -544,17 +544,17 @@ We have the result container setup.
 <br><br>
 
 # 11. Cropping the Image with Canvas
-`canvas` element is very suitable to crop image. We already have the canvas passed to the modal. But how do we crop? We've created the `helpers` folder in our project directory, let's create a file `imagecrophelper.js` to help crop the image. In this file, I created a named export `imagetoCanvas(canvasRed, image, pixelCrop) to do the cropping.
+The `canvas` element is very suitable to crop image. We already have the canvas passed to the modal. But how do we crop? We've created the `helpers` folder in our project directory, let's create a file `imagecrophelper.js` to help crop the image. In this file, I created a named export `imagetoCanvas(canvasRef, image, pixelCrop)` to do the cropping.
 ```js
 export function imagetoCanvas(canvasRef, image, pixelCrop) {
-  const canvas = canvasRef // document.createElement('canvas');
+  const canvas = canvasRef;
   // create scale X and Y
   const scaleX = image.naturalWidth / image.width;
   const scaleY = image.naturalHeight / image.height;
-  // set canvas dimenrion
+  // set canvas dimension
   canvas.width = pixelCrop.width;
   canvas.height = pixelCrop.height;
-  // drow the cropped part
+  // draw the cropped part
   const ctx = canvas.getContext('2d');
   ctx.drawImage(
     image,
@@ -573,6 +573,7 @@ export function imagetoCanvas(canvasRef, image, pixelCrop) {
 That will do the work. In the `ImageCropModal` component, we just update the `handleCropApproval` function to use the helper function.
 ```jsx
 handleCropApproval = () => {
+  // get the canvas from the props
     const { canvasRef } = this.props;
     if (canvasRef && canvasRef.current) {
         imagetoCanvas(canvasRef.current, this.imageRef, this.state.crop)
@@ -664,7 +665,7 @@ All is set but on thing is important, validation! The `input[type=file]` tag for
 ```html
 <input type="file" onInput={handleInput} accept="image/gif, image/jpeg, image/png, image/jpg" />
 ```
-The accept attribute defined the files uploadable that doesn't validate it all. We have to control this in the input handler function, `handleInput`. We could modify this to 
+The accept attribute defined the files uploadable but that doesn't validate it all. We have to control this in the input handler function, `handleInput`. We could modify this to 
 ```jsx
 const handleInput = (e) => {
   const { name, type } = e.target.files[0];
