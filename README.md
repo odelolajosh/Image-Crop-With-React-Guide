@@ -682,4 +682,4 @@ const handleInput = (e) => {
   }
 }
 ```
-Voila! We have our Image Upload-Crop System in React. Thanks to `ReactImageCrop`! Hopefully, this guide helped your project that needs cropping of images or even encourage you to add cropping to your project!
+Voila! We have our Image Upload-Crop System in React. Thanks to `ReactImageCrop`! Hopefully, this guide helped your project that needs cropping of images or even encouraged you to add cropping to your project!
