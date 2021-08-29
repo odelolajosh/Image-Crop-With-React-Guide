@@ -16,7 +16,7 @@ In this article, we are going to create a simple image cropping system in React.
 ```bash
 npm init react-app reactimagecrop
 ```
-After our `reactimagecrop` project is loaded, we are left with a nice structure. We won't need some files like `logo.svg` and the test files. I included `components` folder (which will hold the components we will use), `helper` folder for utilities files.  So, I am left with
+After our `reactimagecrop` project has loaded, we are left with a nice structure. We won't need some files like `logo.svg` and the test files. I included `components` folder (which will hold the components we will use), `helper` folder for utilities files.  So, I am left with
 * public
 * src
   * components
